@@ -3,7 +3,6 @@
 A sleek, lightweight, and beginner-friendly **QR code generator** built using **HTML, CSS, and JavaScript**. This tool helps you instantly convert any text or URL into a QR code that you can download in various formats.
 
 ---
----
 
 ## ✨ Features
 
@@ -143,4 +142,4 @@ This project is licensed under the **MIT License** – feel free to use, modify,
 
 > Made with ❤️ to make sharing easy and accessible.
 
-```
+
