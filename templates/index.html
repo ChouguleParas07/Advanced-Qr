@@ -1,0 +1,58 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL Shortener & QR Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 URL Shortener & QR Generator</h1>
+        
+        <!-- Flash messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% for category, message in messages %}
+            <div class="message {{ category }}">{{ message }}</div>
+          {% endfor %}
+        {% endwith %}
+
+        <!-- Input Form -->
+        <form method="POST">
+            <input type="url" name="url" placeholder="Enter a long URL" required>
+            <div class="buttons">
+                <button type="submit" name="action" value="shorten">Shorten URL</button>
+                <button type="submit" name="action" value="generate_qr">Generate QR Code</button>
+            </div>
+        </form>
+
+        <!-- Display Short URL -->
+        {% if short_url %}
+        <div class="output">
+            <h2>Your Shortened URL:</h2>
+            <input type="text" id="short-url" value="{{ short_url }}" readonly>
+            <button onclick="copyText()">Copy</button>
+        </div>
+        {% endif %}
+
+        <!-- Display QR Code -->
+        {% if qr_code_file %}
+        <div class="qr-result">
+            <h2>Your QR Code:</h2>
+            <img src="{{ url_for('qr_file', filename=qr_code_file) }}" alt="QR Code">
+            <br>
+            <a href="{{ url_for('qr_file', filename=qr_code_file) }}" download>Download QR Code</a>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        function copyText() {
+            const input = document.getElementById("short-url");
+            input.select();
+            document.execCommand("copy");
+            alert("Short URL copied to clipboard!");
+        }
+    </script>
+</body>
+</html>
