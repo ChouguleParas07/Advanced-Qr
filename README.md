@@ -128,8 +128,8 @@ This project is licensed under the **MIT License** – feel free to use, modify,
 
 ## 👤 Author
 
-**Samyak Hirap**
-🔗 [GitHub](https://github.com/samyakhirap18)
+**Paras**
+🔗 [GitHub](https://github.com/ChouguleParas07)
 
 ---
 
@@ -141,5 +141,6 @@ This project is licensed under the **MIT License** – feel free to use, modify,
 ---
 
 > Made with ❤️ to make sharing easy and accessible.
+
 
 
