@@ -8,6 +8,7 @@ A simple Flask web app to shorten long URLs and generate downloadable QR codes. 
 
 - Shorten long URLs into clean, shareable links
 - Generate QR codes for any URL
+- Faster and more reliable
 - Download generated QR codes as image files
 - Flash messages for validation and feedback
 
