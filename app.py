@@ -16,7 +16,7 @@ def index():
         url = request.form.get('url')
         action = request.form.get('action')
         if not url:
-            flash('Please enter a valid URL.', 'error')
+            flash('Please enter a valid and working URL.', 'error')
         elif action == 'shorten':                 #if user wants
             short_code = url_shortener.shorten(url)
             short_url = f'{request.host_url}{short_code}'
