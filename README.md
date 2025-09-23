@@ -1,145 +1,125 @@
-# 📱 QR‑Generator
+# 🔗 URL Shortener & QR Generator
 
-A sleek, lightweight, and beginner-friendly **QR code generator** built using **HTML, CSS, and JavaScript**. This tool helps you instantly convert any text or URL into a QR code that you can download in various formats.
+A simple Flask web app to shorten long URLs and generate downloadable QR codes. Built to be fast, minimal, and easy to deploy.
 
 ---
 
 ## ✨ Features
 
-- 🔤 Convert any **text or URL** into a QR code  
-- 📦 Download as **PNG**, **JPEG**, or **SVG**  
-- 📐 Customizable size  
-- 🛡️ Error correction level (L, M, Q, H) support *(coming soon)*  
-- 🎨 Dark and light styling  
-- 💻 100% browser-based—no backend needed
+- Shorten long URLs into clean, shareable links
+- Generate QR codes for any URL
+- Download generated QR codes as image files
+- Flash messages for validation and feedback
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer       | Tech Used       |
-|-------------|-----------------|
-| Frontend    | HTML, CSS, JavaScript |
-| QR Logic    | `EasyQRCodeJS` (or similar) |
-| Deployment  | GitHub Pages     |
+- Backend: Flask (Python)
+- Storage: SQLite (via a simple URL shortener utility)
+- QR: `qrcode` and `Pillow`
+- Templating/Static: Jinja2, HTML, CSS
 
 ---
 
-## ⚙️ Environment Setup
+## 📦 Requirements
 
-Depending on your future goals (e.g., adding backend support), use one of the following:
+- Python 3.9+
+- pip
 
----
-
-### 🔵 Python (Flask/Django QR API)
+Install Python dependencies:
 
 ```bash
-# Step 1: Create virtual environment
+pip install -r requirements.txt
+```
+
+---
+
+## 🚀 Run Locally
+
+```bash
+# 1) Create & activate a virtual environment (recommended)
 python -m venv venv
 
-# Step 2: Activate environment
-# Windows:
+# Windows
 venv\Scripts\activate
-# macOS/Linux:
+
+# macOS/Linux
 source venv/bin/activate
 
-# Step 3: Install packages
-pip install flask qrcode pillow
-````
+# 2) Install dependencies
+pip install -r requirements.txt
 
----
-
-### 🟢 Node.js (Frontend tooling/React support)
-
-```bash
-# Step 1: Initialize Node project
-npm init -y
-
-# Step 2: (Optional) Install QR code libraries
-npm install qrcode
+# 3) Start the app
+python app.py
 ```
 
-> *Note: For this static HTML project, you can directly open the HTML file in any browser without needing these setups.*
-
----
-
-## 📥 Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/samyakhirap18/QR-Generator.git
-cd QR-Generator
-```
-
-Then just open `index.html` in your browser—no server required!
+The app will start in development mode with debug enabled. Open your browser at `http://127.0.0.1:5000/`.
 
 ---
 
 ## ▶️ Usage
 
-1. Type any text or URL into the input box.
-2. Click the **"Generate QR"** button.
-3. Your QR code will appear instantly.
-4. Use browser options or add a button to download the image.
+1. Enter a valid URL in the input field.
+2. Click "Shorten URL" to get a short link.
+3. Click "Generate QR Code" to create and download a QR image.
 
 ---
 
-## 📁 Folder Structure
+## 📁 Project Structure
 
 ```text
 QR-Generator/
-├── index.html         # Main HTML page
-├── style.css          # Styling
-├── script.js          # QR generation logic
-└── README.md          # This file
+├── app.py
+├── requirements.txt
+├── README.md
+├── templates/
+│   └── index.html
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   └── qr_codes/
+└── utils/
+    ├── __init__.py
+    ├── qr_generator.py
+    └── url_shortener.py
 ```
 
 ---
 
-## 🔧 Possible Future Features
+## 🔌 Endpoints
 
-* 🎨 Color customization for QR codes
-* 📄 Batch QR code generation from CSV
-* 📥 Direct download buttons for PNG/JPEG
-* 📷 QR scan-to-text feature using camera
-* 🔗 Short URL integration (bitly/tinyurl)
-* 🌐 Backend integration with Flask/Django
+- `GET /` – Render the main page
+- `POST /` – Handle URL shorten and QR generation actions
+- `GET /qr_codes/<filename>` – Serve generated QR images
+- `GET /<short_code>` – Redirect short URL to its original URL
 
 ---
 
-## 🤝 Contributing
+## ⚙️ Configuration
 
-Contributions are always welcome! ✨
-Here’s how to get started:
+- `app.secret_key` in `app.py` is set for flash messages. Replace `'change_me'` in production.
 
-1. Fork the repo 🍴
-2. Create a new branch `feature/YourFeature`
-3. Make your changes 💻
-4. Commit and push: `git commit -m "Added new feature"`
-5. Open a pull request ✔️
+---
+
+## 🧪 Notes
+
+- Generated QR images are saved to `static/qr_codes/`.
+- Short codes are managed by `utils/url_shortener.py`.
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License** – feel free to use, modify, and distribute.
+MIT License
 
 ---
 
 ## 👤 Author
 
-**Samyak Hirap**
-🔗 [GitHub](https://github.com/samyakhirap18)
+**paras**  
+🔗 GitHub: https://github.com/<your-username>
 
 ---
 
-## 🙌 Acknowledgements
-
-* Inspired by simple QR generators online
-* Thanks to libraries like [EasyQRCodeJS](https://github.com/ushelp/EasyQRCodeJS)
-
----
-
-> Made with ❤️ to make sharing easy and accessible.
-
-
+> Built to make sharing easier and faster.

@@ -4,7 +4,7 @@ from utils.url_shortener import UrlShortener
 from utils.qr_generator import QRGenerator
 
 app = Flask(__name__)
-app.secret_key = 'change_me'  # For flash messages
+app.secret_key = 'change_me'  # For flash messages the icon come out
 
 url_shortener = UrlShortener()
 qr_generator = QRGenerator()
@@ -17,7 +17,7 @@ def index():
         action = request.form.get('action')
         if not url:
             flash('Please enter a valid URL.', 'error')
-        elif action == 'shorten':
+        elif action == 'shorten':                 #if user wants
             short_code = url_shortener.shorten(url)
             short_url = f'{request.host_url}{short_code}'
         elif action == 'generate_qr':
