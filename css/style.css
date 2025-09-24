@@ -1,0 +1,186 @@
+/* Universal Styles */
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at 60% 40%, #74c0fc 0%, #845ef7 100%),
+                linear-gradient(120deg, #ffe5ec20, #9fa8da 70%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    color: #22223b;
+    padding: 40px 8px;
+}
+
+.container {
+    max-width: 500px;
+    width: 100%;
+    padding: 35px 45px;
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(24px) saturate(180%);
+    box-shadow: 0 8px 40px 0 rgba(76,110,245,0.12), 0 16px 64px 0 rgba(246,114,128,0.12);
+    border: 1.5px solid rgba(130,130,130,0.08);
+}
+/* Header and Footer removed */
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.2rem;
+    background: linear-gradient(90deg, #3CA9E2 20%, #7c4dff 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 3px;
+}
+
+/* Input fields */
+input[type="url"], input[type="text"] {
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    outline: none;
+    border: none;
+    background: #f8fafc;
+    box-shadow: 0 2px 10px 0 rgba(44,62,80,0.06);
+    margin-bottom: 10px;
+    transition: box-shadow .2s;
+}
+
+input:focus {
+    box-shadow: 0 0 0 3px #b2f7ef80;
+}
+
+/* Button styles */
+.buttons {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 10px;
+}
+
+button {
+    flex: 1;
+    padding: 12px 0;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+    color: #22223b;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: .2px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(50, 150, 250, .12);
+    transition: background .2s, box-shadow .2s;
+}
+
+button:hover {
+    background: linear-gradient(270deg, #38f9d7 0%, #43e97b 100%);
+    box-shadow: 0 8px 24px rgba(60, 169, 226, .13);
+}
+
+/* Success and error message styles */
+.message {
+    text-align: center;
+    padding: 10px;
+    margin: 10px 0 5px 0;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.message.error {
+    background-color: #ff6b6b;
+    color: #fff;
+}
+.message.success {
+    background-color: #55efc4;
+    color: #2d3436;
+}
+
+/* Output sections */
+.output, .qr-result {
+    margin-top: 22px;
+    padding: 18px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 14px;
+    box-shadow: 0 2px 10px #7950f230;
+    text-align: center;
+}
+
+.output input[type="text"] {
+    background-color: #f1f1f1;
+    color: #2d3436;
+    border: none;
+    box-shadow: none;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+.output button {
+    padding: 10px 12px;
+    width: auto;
+    margin-left: 6px;
+    background: linear-gradient(90deg, #a18cd1 0%, #fbc2eb 100%);
+    color: #22223b;
+    border-radius: 7px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px #a18cd120;
+    transition: background .2s;
+}
+
+.output button:hover {
+    background: linear-gradient(270deg, #fbc2eb 0%, #a18cd1 100%);
+}
+
+.qr-result img {
+    width: 210px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 0px 16px #a29bfe33;
+}
+
+/* Download link */
+a {
+    display: inline-block;
+    background: linear-gradient(90deg, #a18cd1 0%, #fbc2eb 100%);
+    color: #22223b;
+    padding: 9px 18px;
+    border-radius: 9px;
+    font-weight: 600;
+    margin-top: 7px;
+    text-decoration: none;
+    box-shadow: 0 2px 8px #a18cd120;
+    transition: background .2s;
+}
+a:hover {
+    background: linear-gradient(270deg, #fbc2eb 0%, #a18cd1 100%);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 18px 8px;
+        border-radius: 18px;
+    }
+    h1 {
+        font-size: 1.3rem;
+    }
+    button {
+        padding: 10px 0;
+        font-size: .95rem;
+    }
+    .qr-result img {
+        width: 150px;
+    }
+}
